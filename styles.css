@@ -1,6 +1,7 @@
 body {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
+  margin: 0;
 }
 
 button {
@@ -8,9 +9,16 @@ button {
   border: none;
   color: #fff;
   font-weight: 700;
-  padding: 1rem 2.5rem;
+  padding: .9rem 2.6rem;
   border-radius: 3rem;
   font-size: 18px;
+}
+
+.head-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
 .head-link {
@@ -19,4 +27,138 @@ button {
   font-weight: 700;
   padding: 1rem;
   font-size: 15px;
+}
+
+.main-section, .extra-info, .head-links, .extra-add, .footer-links {
+  padding: 2rem 10rem;
+}
+/* Extera info section */
+.extera-info {
+  background-color: #EFF1F7;
+  padding-top: 10rem;
+  padding-bottom: 8rem;
+}
+
+.extera-info p {
+  margin: 0;
+}
+
+.shorten-section {
+  background-color: hsl(257, 27%, 26%);
+  background-image: url("images/bg-shorten-desktop.svg");
+  background-repeat: no-repeat;
+  padding: 3rem;
+  width: 70%;
+  margin: auto;
+  border-radius: .8rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.shorten-section input {
+  width: 73.5%;
+  padding: 1.5rem;
+  border-radius: .8rem;
+  border: none;
+}
+
+.shorten-section button {
+  border-radius: .8rem;
+}
+
+.extera-info .head-section {
+  width: 36%;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.extera-info .head-section h3 {
+  font-size: 40px;
+  margin-bottom: 1rem;
+  color: hsl(257, 27%, 26%);
+}
+
+.extera-info .head-section p{
+  color: hsl(257, 7%, 63%);
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+}
+
+.featur {
+  background-color: #fff;
+  width: 20rem;
+  height: 15rem;
+  border-radius: .3rem;
+  padding: 1.2rem;
+}
+
+.featur img {
+  background-color: hsl(257, 27%, 26%);
+  
+  border: 3rem solid white;
+  border-radius: 50%;
+}
+
+.featur p {
+  color: hsl(257, 7%, 63%);
+  font-size: 15px;
+  width: 90%;
+}
+
+.featur h4 {
+  color: hsl(257, 27%, 26%);
+  font-size: 23px;
+  width: 90%;
+}
+
+
+/* Extera add section */
+.extera-add {
+  background-color: hsl(257, 27%, 26%);
+  padding: 4rem 0;
+  text-align: center;
+  background-image: url("images/bg-boost-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.extera-add h3{
+  color: #fff;
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 1.8rem;
+  font-size: 40px;
+}
+
+
+/* Footer links */
+.footer-links {
+  padding-top: 5rem;
+  display: flex;
+  background-color: hsl(260, 8%, 14%);
+  justify-content: space-between;
+}
+
+.right-links {
+  display: flex;
+  width: 65%;
+  justify-content: space-between;
+}
+
+.sections h5 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.sections p {
+  color: hsl(0, 0%, 75%);
+  font-size: 15px;
+  margin: 12px 0;
+}
+
+.media-icon {
+  margin: 0 .5rem;
 }
