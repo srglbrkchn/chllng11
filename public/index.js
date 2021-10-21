@@ -1,20 +1,24 @@
-document.querySelector(".shorten-btn").addEventListener('click', function(event) {
-  let url = document.querySelector(".shorten-link");
+document.querySelector(".shorten-btn").addEventListener("click", function(event) {
+  let url = document.querySelector(".shorten-input");
 
   if (url.validity.typeMismatch || url.validity.valueMissing) {
     document.querySelector(".error-msg").innerHTML = "Please add a link";
-    document.querySelector(".shorten-link").style.border = "3px solid hsl(0, 87%, 67%)";
-    // document.querySelector(".shorten-link").placeholder.style.color = "hsl(0, 87%, 67%)";
-    // document.querySelectorAll("::placeholder").classList.add("perror");
+    document.querySelector(".shorten-input").style.border = "3px solid hsl(0, 87%, 67%)";
+    document.querySelector(".shorten-input").style.padding = "1.2rem 1.5rem";
   }
 
-  // alert("hi");
 });
 
 function copyFunction() {
-  const copyText = document.querySelector(".short-p").textContent;
-  // copyText.select();
-  // copyText.setSelectionRange(0, 99999);
-  navigator.clipboard.writeText(copyText);
-  alert("Copied the text: " + copyText);
+  // copies the content of <p> with class .short-p
+  let r = document.createRange();
+  r.selectNode(document.querySelector(".short-p"));
+  window.getSelection().removeAllRanges();
+  window.getSelection().addRange(r);
+  document.execCommand("copy");
+  window.getSelection().removeAllRanges();
+  //
+
+  document.querySelector(".shorten-link button").innerHTML = "Copied!";
+  document.querySelector(".shorten-link button").style.backgroundColor =  "hsl(257, 27%, 26%)";
 }

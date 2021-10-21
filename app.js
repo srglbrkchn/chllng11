@@ -6,7 +6,7 @@ const https = require('https');
 
 const app = express();
 
-const shortenedLinks =[];
+const requestedLinks =[];
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({
@@ -28,7 +28,19 @@ app.post("/", function(req, res){
       const shortLinkData = JSON.parse(data);
       const shortenLink = shortLinkData.result.full_short_link;
 
-      // console.log(shortLinkData.result.full_short_link);
+      const requestedLink = {
+        longUrl: reqUrl,
+        shortUrl: shortenLink
+      }
+
+      requestedLinks.forEach(function(link){
+        if((link.longUrl.localeCompare(requestedLink.longUrl)) === false){
+          requestedLinks.push(requestedLink);
+        }
+      });
+
+      console.log(requestedLinks);
+
       res.render("index.ejs", {shortenLink: shortenLink , longLink:reqUrl});
 
     });
