@@ -9,16 +9,16 @@ document.querySelector(".shorten-btn").addEventListener("click", function(event)
 
 });
 
-function copyFunction() {
+function copyFunction(id) {
   // copies the content of <p> with class .short-p
   let r = document.createRange();
-  r.selectNode(document.querySelector(".short-p"));
+  r.selectNode(document.querySelectorAll(".short-p")[id]);
   window.getSelection().removeAllRanges();
   window.getSelection().addRange(r);
   document.execCommand("copy");
   window.getSelection().removeAllRanges();
   //
 
-  document.querySelector(".shorten-link button").innerHTML = "Copied!";
-  document.querySelector(".shorten-link button").style.backgroundColor =  "hsl(257, 27%, 26%)";
+  document.querySelectorAll(".shorten-link button")[id].innerHTML = "Copied!";
+  document.querySelectorAll(".shorten-link button")[id].style.backgroundColor =  "hsl(257, 27%, 26%)";
 }

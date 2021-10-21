@@ -6,7 +6,7 @@ const https = require('https');
 
 const app = express();
 
-const requestedLinks =[];
+const requestedLinks = [];
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({
@@ -15,33 +15,52 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.get("/", function(req, res) {
-  res.render("index.ejs", {shortenLink:"", longLink:""});
+  res.render("index.ejs", {
+    requestedLinks: []
+  });
 });
 
-app.post("/", function(req, res){
-  reqUrl  = req.body.longLink;
+app.post("/", function(req, res) {
+  reqUrl = req.body.longLink;
   url = "https://api.shrtco.de/v2/shorten?url=" + reqUrl;
-  https.get(url, function(response){
+  https.get(url, function(response) {
     console.log(response.statusCode);
 
-    response.on('data', function(data){
+    response.on('data', function(data) {
       const shortLinkData = JSON.parse(data);
       const shortenLink = shortLinkData.result.full_short_link;
 
       const requestedLink = {
         longUrl: reqUrl,
-        shortUrl: shortenLink
+        shortUrl: shortenLink,
+        id: ""
       }
 
-      requestedLinks.forEach(function(link){
-        if((link.longUrl.localeCompare(requestedLink.longUrl)) === false){
+      if (requestedLinks.length === 0) {
+        requestedLink.id = 0;
+        requestedLinks.push(requestedLink);
+      } else {
+        const rlink = requestedLink.longUrl;
+        let count = 0;
+        requestedLinks.forEach(function(link) {
+          if ((rlink == (link.longUrl))) {
+            count++;
+          }
+        });
+
+        if (count === 0) {
+          requestedLink.id = requestedLinks.length;
           requestedLinks.push(requestedLink);
+        } else {
+          count = 0;
         }
-      });
+      }
 
       console.log(requestedLinks);
 
-      res.render("index.ejs", {shortenLink: shortenLink , longLink:reqUrl});
+      res.render("index.ejs", {
+        requestedLinks: requestedLinks
+      });
 
     });
   });

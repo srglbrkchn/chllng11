@@ -235,26 +235,26 @@
 
     <div class="content">
 
-        <div class="shorten-section">
-            <form class="inner-content" action="/" method="post" preventDefault="true">
-            <input class="shorten-input" type="url" name="longLink" value="" placeholder="Shorten a link here..." required>
-            <button class="shorten-btn" type="submit" name="button">Shorten It!</button>
-            </form>
-          <p class="error-msg"></p>
-        </div>
+      <div class="shorten-section">
+        <form class="inner-content" action="/" method="post" preventDefault="true">
+          <input class="shorten-input" type="url" name="longLink" value="" placeholder="Shorten a link here..." required>
+          <button class="shorten-btn" type="submit" name="button">Shorten It!</button>
+        </form>
+        <p class="error-msg"></p>
+      </div>
 
-        <div class="shorten-links">
-          <div class="shorten-link" name="shortenLink">
-              <p class="long-p"><%=longLink%></p>
-              <div class="short-section">
-              <p class="short-p"><%=shortenLink%></p>
-              <button type="button" name="copy" onclick="copyFunction()">Copy</button>
-              </div>
+      <div class="shorten-links">
+        <%requestedLinks.forEach(function(requestedLink){ %>
+        <div class="shorten-link" name="shortenLink">
+          <p class="long-p"><%=requestedLink.longUrl%></p>
+          <div class="short-section">
+            <p class="short-p"><%=requestedLink.shortUrl%></p>
+            <button type="button" name="copy" onclick="copyFunction(<%= requestedLink.id %>)">Copy</button>
           </div>
+        </div>
+        <%});%>
 
         </div>
-
-
 
       <div class="head-section">
         <h3>Advanced Statistics</h3>
