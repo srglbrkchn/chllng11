@@ -25,6 +25,7 @@ button:hover, .footer-links p:hover, .media-icon:hover {
 ::placeholder {
   color: hsl(257, 7%, 63%);
   font-size: 18px;
+  padding-left: 1rem;
 }
 
 .head-links {
@@ -126,12 +127,40 @@ button:hover, .footer-links p:hover, .media-icon:hover {
   background-color: hsl(257, 27%, 26%);
   background-image: url("images/bg-shorten-desktop.svg");
   background-repeat: no-repeat;
-  padding: 3rem;
+  padding: 2rem 3rem;
   width: 70%;
   margin: auto;
   border-radius: .8rem;
   display: flex;
+  flex-direction: column;
+}
+
+.shorten-links {
+  border: 2px solid black;
+  width: 75%;
+}
+
+.shorten-link{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.short-section{
+  display: flex;
+}
+
+.inner-content {
+  display: flex;
   justify-content: space-around;
+}
+
+.error-msg {
+  display: inline-block;
+  color: hsl(0, 87%, 67%);
+  padding-left: 1rem;
+  padding-top: .5rem;
 }
 
 .shorten-section input {
@@ -296,4 +325,8 @@ button:hover, .footer-links p:hover, .media-icon:hover {
 
 .media-icon:hover {
   color: hsl(180, 66%, 49%);
+}
+
+.perror {
+  color: hsl(0, 87%, 67%);
 }

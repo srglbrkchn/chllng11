@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -235,10 +235,26 @@
 
     <div class="content">
 
-      <div class="shorten-section">
-        <input type="text" name="longLink" value="" placeholder="Shorten a link here...">
-        <button type="button" name="button">Shorten It!</button>
-      </div>
+        <div class="shorten-section">
+            <form class="inner-content" action="/" method="post" preventDefault="true">
+            <input class="shorten-link" type="url" name="longLink" value="" placeholder="Shorten a link here..." required>
+            <button class="shorten-btn" type="submit" name="button">Shorten It!</button>
+            </form>
+          <p class="error-msg"></p>
+        </div>
+
+        <div class="shorten-links">
+          <div class="shorten-link" name="shortenLink">
+              <p><%=longLink%></p>
+              <div class="short-section">
+              <p class="short-p"><%=shortenLink%></p>
+              <button type="button" name="copy" onclick="copyFunction()">Copy</button>
+              </div>
+          </div>
+
+        </div>
+
+
 
       <div class="head-section">
         <h3>Advanced Statistics</h3>
@@ -346,6 +362,7 @@
     Challenge by <a style="text-decoration:none;color:hsl(180, 66%, 49%)" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a style="text-decoration:none;color:hsl(180, 66%, 49%)" href="https://github.com/srglbrkchn">srglbrkchn</a>.
   </div>
+  <script src="index.js" charset="utf-8"></script>
 </body>
 
 </html>
