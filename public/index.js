@@ -21,4 +21,9 @@ function copyFunction(id) {
 
   document.querySelectorAll(".shorten-link button")[id].innerHTML = "Copied!";
   document.querySelectorAll(".shorten-link button")[id].style.backgroundColor =  "hsl(257, 27%, 26%)";
+
+  setTimeout(function() {
+    document.querySelectorAll(".shorten-link button")[id].innerHTML = "Copy";
+    document.querySelectorAll(".shorten-link button")[id].style.backgroundColor =  "hsl(180, 66%, 49%)";
+  }, 2000);
 }
