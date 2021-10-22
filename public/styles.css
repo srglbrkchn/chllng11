@@ -145,7 +145,7 @@ button:hover, .footer-links p:hover, .media-icon:hover {
   width: 80%;
 }
 
-.shorten-link{
+.shorten-link {
   width: 93%;
   border-radius: 5px;
   background-color: #FFF;
@@ -162,19 +162,19 @@ button:hover, .footer-links p:hover, .media-icon:hover {
   padding: .7rem 1.8rem;
   font-size: 15px;
   margin: 0 .5rem 0 1rem;
-  transition:  .2s linear;
+  transition: .2s linear;
 }
 
-
-.short-p{
+.short-p {
   color: hsl(180, 66%, 49%);
 }
 
-.log-p {
+.long-p {
   color: hsl(257, 27%, 26%);
+  max-width: 30%;
 }
 
-.short-section{
+.short-section {
   display: flex;
   align-items: center;
 }
@@ -360,4 +360,161 @@ button:hover, .footer-links p:hover, .media-icon:hover {
 
 .media-icon:hover {
   color: hsl(180, 66%, 49%);
+}
+
+@media(max-width: 1300px) {
+  ::placeholder {
+    font-size: 15px;
+  }
+
+  .main-section, .extra-info, .head-links, .extra-add, .footer-links {
+    padding: 5rem 2rem 5rem;
+  }
+
+  .main-section {
+    padding-right: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .text {
+    width: 40%;
+  }
+
+  .text h1 {
+    font-size: 40px;
+  }
+
+  .text p {
+    width: 80%;
+    font-size: 20px;
+  }
+
+  .text button {
+    font-size: 15px;
+    padding: .8rem;
+    width: 10rem;
+  }
+
+  .work-picture {
+    width: 50%;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    bottom: 40px;
+  }
+
+  .extera-info p {
+    margin: 0;
+  }
+
+  .shorten-section {
+    padding: 1rem 2rem;
+    width: 80%;
+    border-radius: .8rem;
+  }
+
+  .inner-content {
+    justify-content: space-between;
+  }
+
+  .shorten-section button {
+    padding: 1rem;
+    height: 3rem;
+    font-size: 15px;
+    border-radius: 5px;
+  }
+
+  .shorten-section input {
+    padding: 1rem .5rem;
+    width: 75%;
+  }
+
+  .shorten-links {
+    width: 89%;
+  }
+
+  .shorten-links p {
+    font-size: 15px;
+  }
+
+  .extera-info .head-section {
+    width: 50%;
+    margin-bottom: 6rem;
+  }
+
+  .extera-info .head-section h3 {
+    margin-top: 4rem;
+    font-size: 30px;
+  }
+
+  .extera-info .head-section p {
+    font-size: 15px;
+  }
+
+  .green-line {
+    width: .5rem;
+    height:  6rem;
+  }
+
+  .pic-back {
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(257, 27%, 26%);
+    border-radius: 50%;
+    position: relative;
+    top: -2rem;
+    left: 6rem;
+  }
+
+  .features {
+    display: grid;
+    width: 22rem;
+    margin: 1rem;
+    grid-gap: 0;
+    grid-template-columns: 1fr 1.5rem 1fr;
+    grid-template-rows: 1fr 6rem 1fr 6rem 1fr ;
+    grid-template-areas:
+      "recognition recognition recognition"
+      ". line1 ."
+      "records records records"
+      ". line2 ."
+      "customizable customizable customizable";
+    justify-content: center;
+    align-items: center;
+  }
+  .extera-info {
+    padding-bottom: 5rem;
+  }
+
+  .footer-links {
+    justify-content: space-around;
+  }
+
+  .right-links {
+    width: 70%;
+    justify-content: space-between;
+  }
+
+  .sections h5 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .sections p {
+    font-size: 12px;
+    margin: 6px 0;
+  }
+
+  .media-icon {
+    margin: 0 .2rem;
+  }
 }

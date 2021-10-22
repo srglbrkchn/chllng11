@@ -16,6 +16,7 @@ app.use(bodyParser.json());
 
 app.get("/", function(req, res) {
   res.render("index.ejs", {
+    errMsg: "",
     requestedLinks: []
   });
 });
@@ -24,45 +25,56 @@ app.post("/", function(req, res) {
   reqUrl = req.body.longLink;
   url = "https://api.shrtco.de/v2/shorten?url=" + reqUrl;
   https.get(url, function(response) {
+
     console.log(response.statusCode);
+    const responseCode = response.statusCode;
 
-    response.on('data', function(data) {
-      const shortLinkData = JSON.parse(data);
-      const shortenLink = shortLinkData.result.full_short_link;
+    if (responseCode === 201) {
 
-      const requestedLink = {
-        longUrl: reqUrl,
-        shortUrl: shortenLink,
-        id: ""
-      }
+      response.on('data', function(data) {
+        const shortLinkData = JSON.parse(data);
+        const shortenLink = shortLinkData.result.full_short_link;
 
-      if (requestedLinks.length === 0) {
-        requestedLink.id = 0;
-        requestedLinks.push(requestedLink);
-      } else {
-        const rlink = requestedLink.longUrl;
-        let count = 0;
-        requestedLinks.forEach(function(link) {
-          if ((rlink == (link.longUrl))) {
-            count++;
-          }
-        });
+        const requestedLink = {
+          longUrl: reqUrl,
+          shortUrl: shortenLink,
+          id: ""
+        }
 
-        if (count === 0) {
-          requestedLink.id = requestedLinks.length;
+        if (requestedLinks.length === 0) {
+          requestedLink.id = 0;
           requestedLinks.push(requestedLink);
         } else {
-          count = 0;
+          const rlink = requestedLink.longUrl;
+          let count = 0;
+          requestedLinks.forEach(function(link) {
+            if ((rlink == (link.longUrl))) {
+              count++;
+            }
+          });
+
+          if (count === 0) {
+            requestedLink.id = requestedLinks.length;
+            requestedLinks.push(requestedLink);
+          } else {
+            count = 0;
+          }
         }
-      }
 
-      console.log(requestedLinks);
+        console.log(requestedLinks);
 
+        res.render("index.ejs", {
+          errMsg:"",
+          requestedLinks: requestedLinks
+        });
+
+      });
+    } else {
       res.render("index.ejs", {
+        errMsg:"Invalid link!",
         requestedLinks: requestedLinks
       });
-
-    });
+    }
   });
 });
 
