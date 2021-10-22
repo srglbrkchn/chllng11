@@ -9,6 +9,21 @@ document.querySelector(".shorten-btn").addEventListener("click", function(event)
 
 });
 
+function changeColor(id) {
+  document.querySelectorAll(".shorten-link button")[id].innerHTML = "Copied!";
+  document.querySelectorAll(".shorten-link button")[id].style.backgroundColor =  "hsl(257, 27%, 26%)";
+
+  setTimeout(function() {
+    document.querySelectorAll(".shorten-link button")[id].innerHTML = "Copy";
+    document.querySelectorAll(".shorten-link button")[id].style.backgroundColor =  "hsl(180, 66%, 49%)";
+  }, 2000);
+}
+
+function soundEffect() {
+  let popSound = new Audio("sounds/pop.mp3");
+  popSound.play();
+}
+
 function copyFunction(id) {
   // copies the content of <p> with class .short-p
   let r = document.createRange();
@@ -19,11 +34,6 @@ function copyFunction(id) {
   window.getSelection().removeAllRanges();
   //
 
-  document.querySelectorAll(".shorten-link button")[id].innerHTML = "Copied!";
-  document.querySelectorAll(".shorten-link button")[id].style.backgroundColor =  "hsl(257, 27%, 26%)";
-
-  setTimeout(function() {
-    document.querySelectorAll(".shorten-link button")[id].innerHTML = "Copy";
-    document.querySelectorAll(".shorten-link button")[id].style.backgroundColor =  "hsl(180, 66%, 49%)";
-  }, 2000);
+  changeColor(id);
+  soundEffect();
 }
