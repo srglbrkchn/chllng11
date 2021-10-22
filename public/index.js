@@ -5,6 +5,8 @@ document.querySelector(".shorten-btn").addEventListener("click", function(event)
     document.querySelector(".error-msg").innerHTML = "Please add a link";
     document.querySelector(".shorten-input").style.border = "3px solid hsl(0, 87%, 67%)";
     document.querySelector(".shorten-input").style.padding = "1.2rem 1.5rem";
+    event.preventDefault(); // Prevents browser default error message
+
   }
 
 });
