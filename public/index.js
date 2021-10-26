@@ -41,3 +41,43 @@ function copyFunction(id) {
   changeColor(id);
   soundEffect();
 }
+
+// Hamburger menue appear/disappear functionality
+
+let status = "hidden";
+let open = 0;
+
+
+function buttonActive() {
+  document.querySelector(".head-part1").style.visibility = "visible";
+  status = "appear";
+  open = 1;
+}
+
+function buttonInactive() {
+  document.querySelector(".head-part1").style.visibility = "hidden";
+  status = "hidden";
+  open = 0;
+}
+
+document.querySelector(".hamburger").addEventListener("click", function() {
+  if (status === "hidden") {
+    buttonActive();
+  } else {
+    buttonInactive();
+  }
+});
+
+// Checks screen size, if on Tablet or desktop mode, makes content  of hamburger menue visible at all times.
+function buttonAppear() {
+  let windowWidth = window.innerWidth;
+  if (windowWidth > 850) {
+    document.querySelector(".head-part1").style.visibility = "visible";
+  } else {
+    if (open === 1) {
+      buttonActive();
+    } else {
+      buttonInactive();
+    }
+  }
+}

@@ -51,6 +51,12 @@ button:hover, .footer-links p:hover, .media-icon:hover {
   font-size: 15px;
 }
 
+.hamburger {
+  font-size: 28px;
+  color: hsl(257, 7%, 63%);
+  visibility: hidden;
+}
+
 .links-section {
   display: flex;
 }
@@ -546,12 +552,29 @@ button:hover, .footer-links p:hover, .media-icon:hover {
     animation: fadeIn .8s ease-in;
   }
 
+  .main-section, .extra-info, .head-links, .extra-add, .footer-links {
+    padding: 2rem 1.5rem 10rem;
+  }
+
   .links-section, .head-part1, .head-part2 {
     flex-direction: column;
     justify-content: space-around;
   }
 
+  .head-links {
+    padding-top: 2rem;
+    align-items: center;
+  }
+
+  .hamburger {
+    visibility: visible;
+  }
+
   .head-part1 {
+    visibility: hidden;
+    position: absolute;
+    top: 90px;
+    right: 25px;
     width: 325px;
     min-width: 325px;
     height: 390px;
@@ -563,17 +586,90 @@ button:hover, .footer-links p:hover, .media-icon:hover {
 
   .links-section {
     align-items: center;
-    height: 60%;
+    height: 40%;
   }
 
   .head-part2 {
+    justify-content: center;
+    padding-top: .5rem;
     height: 40%;
+    width: 90%;
+    border-top: 1px solid hsl(0, 0%, 75%);
+  }
+
+  .head-part2 button {
+    font-size: 18px;
+    padding: .8rem 6.5rem;
+    margin-top: 1.5rem;
   }
 
   .head-link {
     color: #FFF;
-    font-size: 17px;
-    font-weight: normal;
+    font-size: 18px;
+  }
+
+  .main-section {
+    flex-direction: column-reverse;
+    padding-right: 0;
+  }
+
+  .text, .work-picture {
+    width: 100%;
+  }
+
+  .text {
+    text-align: center;
+    align-items: center;
+  }
+
+  .text p {
+    margin: 1rem 0 2rem;
+    width: 95%;
+    font-size: 18px;
+  }
+
+  .text button {
+    font-size: 19px;
+    padding: 1.1rem;
+    width: 12rem;
+  }
+
+  .work-picture {}
+
+  .shorten-section {
+    background-image: url("images/bg-shorten-mobile.svg");
+    background-repeat: no-repeat;
+    padding: 1rem ;
+    width: 80%;
+  }
+
+  .inner-content {
+    flex-direction: column;
+  }
+
+  .error-msg {
+    display: inline-block;
+    color: hsl(0, 87%, 67%);
+    padding-left: 1rem;
+    padding-top: .5rem;
+    font-size: 10px;
+  }
+
+  .shorten-section input {
+    width: 90%;
+    padding: .7rem .5rem;
+    border-radius: .4rem;
+    border: none;
+    font-size: 18px;
+    margin: 1rem .2rem;
+  }
+
+  .shorten-section button {
+    border-radius: .4rem;
+    padding: .7rem .6rem;
+    height: 2.8rem;
+    font-size: 18px;
+    width: 95%;
   }
 }
 
