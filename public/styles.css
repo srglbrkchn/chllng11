@@ -552,13 +552,25 @@ button:hover, .footer-links p:hover, .media-icon:hover {
     animation: fadeIn .8s ease-in;
   }
 
-  .main-section, .extra-info, .head-links, .extra-add, .footer-links {
+   .head-links, .extra-add, .footer-links {
     padding: 2rem 1.5rem 10rem;
   }
 
-  .links-section, .head-part1, .head-part2 {
+  .extera-info {
+    padding-bottom: 0;
+  }
+
+  .head-links {
+    padding-bottom: 1rem;
+  }
+
+  .links-section, .head-part1, .head-part2, .footer-links, .shorten-link, .short-section {
     flex-direction: column;
     justify-content: space-around;
+  }
+
+  .social-media {
+    flex-direction: row;
   }
 
   .head-links {
@@ -610,7 +622,11 @@ button:hover, .footer-links p:hover, .media-icon:hover {
 
   .main-section {
     flex-direction: column-reverse;
-    padding-right: 0;
+    padding: 2rem 0 11rem;
+  }
+
+  .content {
+    bottom: 85px;
   }
 
   .text, .work-picture {
@@ -623,8 +639,8 @@ button:hover, .footer-links p:hover, .media-icon:hover {
   }
 
   .text p {
-    margin: 1rem 0 2rem;
-    width: 95%;
+    margin: 1rem auto 2rem;
+    width: 90%;
     font-size: 18px;
   }
 
@@ -639,7 +655,7 @@ button:hover, .footer-links p:hover, .media-icon:hover {
   .shorten-section {
     background-image: url("images/bg-shorten-mobile.svg");
     background-repeat: no-repeat;
-    padding: 1rem ;
+    padding: 1rem;
     width: 80%;
   }
 
@@ -648,28 +664,30 @@ button:hover, .footer-links p:hover, .media-icon:hover {
   }
 
   .error-msg {
-    display: inline-block;
-    color: hsl(0, 87%, 67%);
-    padding-left: 1rem;
-    padding-top: .5rem;
     font-size: 10px;
   }
 
-  .shorten-section input {
-    width: 90%;
-    padding: .7rem .5rem;
-    border-radius: .4rem;
-    border: none;
+  .shorten-section input, .shorten-section button {
     font-size: 18px;
+    border-radius: .4rem;
+    padding: .8rem 0;
+    width: 94%;
+  }
+
+  .shorten-section input {
     margin: 1rem .2rem;
+    padding-left: .3rem;
+    width: 93%;
+    /* font-size: 15px; */
+
   }
 
   .shorten-section button {
-    border-radius: .4rem;
-    padding: .7rem .6rem;
     height: 2.8rem;
-    font-size: 18px;
-    width: 95%;
+  }
+
+  ::placeholder {
+    margin-left: 1rem;
   }
 }
 
