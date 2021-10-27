@@ -288,7 +288,6 @@ button:hover, .footer-links p:hover, .media-icon:hover {
 .featur p {
   color: hsl(257, 7%, 63%);
   font-size: 15px;
-  /* width: 90%; */
 }
 
 .featur h4 {
@@ -678,8 +677,6 @@ button:hover, .footer-links p:hover, .media-icon:hover {
     margin: 1rem .2rem;
     padding-left: .3rem;
     width: 93%;
-    /* font-size: 15px; */
-
   }
 
   .shorten-section button {
@@ -689,6 +686,57 @@ button:hover, .footer-links p:hover, .media-icon:hover {
   ::placeholder {
     margin-left: 1rem;
   }
+
+
+  .shorten-links {
+    width: 100%;
+    align-items: center;
+  }
+
+  .shorten-link {
+    width: 90%;
+    padding: 16px 0;
+  }
+
+
+  .shorten-links p {
+    font-size: 15px;
+    padding-left: 1rem;
+    padding-bottom: .7rem;
+    align-self: flex-start;
+  }
+
+  .long-p {
+    width: 100%;
+  }
+
+  .short-section {
+    width: 100%;
+    border-top: 1px solid hsl(0, 0%, 75%);
+    padding: .5rem 0;
+  }
+
+  .short-section button {
+    width: 90%;
+    margin: 0;
+  }
+
+  .extera-info .head-section {
+    width: 90%;
+  }
+
+  .extera-info .head-section h3 {
+    font-size: 28px;
+    width: 90%;
+    margin:  4rem auto auto;
+  }
+
+  .extera-info .head-section p {
+    width: 85%;
+    margin: 1rem auto 0;
+  }
+
+
 }
 
 /* Animation */
