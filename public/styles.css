@@ -551,7 +551,7 @@ button:hover, .footer-links p:hover, .media-icon:hover {
     animation: fadeIn .8s ease-in;
   }
 
-   .head-links, .extra-add, .footer-links {
+  .head-links, .extra-add, .footer-links {
     padding: 2rem 1.5rem 10rem;
   }
 
@@ -625,7 +625,7 @@ button:hover, .footer-links p:hover, .media-icon:hover {
   }
 
   .content {
-    bottom: 85px;
+    bottom: 80px;
   }
 
   .text, .work-picture {
@@ -654,6 +654,7 @@ button:hover, .footer-links p:hover, .media-icon:hover {
   .shorten-section {
     background-image: url("images/bg-shorten-mobile.svg");
     background-repeat: no-repeat;
+    background-size: cover;
     padding: 1rem;
     width: 80%;
   }
@@ -687,7 +688,6 @@ button:hover, .footer-links p:hover, .media-icon:hover {
     margin-left: 1rem;
   }
 
-
   .shorten-links {
     width: 100%;
     align-items: center;
@@ -697,7 +697,6 @@ button:hover, .footer-links p:hover, .media-icon:hover {
     width: 90%;
     padding: 16px 0;
   }
-
 
   .shorten-links p {
     font-size: 15px;
@@ -728,7 +727,7 @@ button:hover, .footer-links p:hover, .media-icon:hover {
   .extera-info .head-section h3 {
     font-size: 28px;
     width: 90%;
-    margin:  4rem auto auto;
+    margin: 4rem auto auto;
   }
 
   .extera-info .head-section p {
@@ -736,7 +735,52 @@ button:hover, .footer-links p:hover, .media-icon:hover {
     margin: 1rem auto 0;
   }
 
+  .features {
+    width: 20rem;
+    grid-template-columns: 1fr 2rem 1.5rem 1fr;
+    grid-template-rows: 1fr 6rem 1fr 6rem 1fr;
+    grid-template-areas:
+      "recognition recognition recognition recognition"
+      ". . line1 ."
+      "records records records records"
+      ". . line2 ."
+      "customizable customizable customizable customizable";
+  }
 
+  .featur {
+    width: 16rem;
+    height: 16rem;
+    padding: 0 2rem 1rem;
+    text-align: center;
+  }
+
+  .featur h4 {
+    margin: 0 auto 20px;
+  }
+
+  .extera-add {
+    background-color: hsl(257, 27%, 26%);
+    padding: 6rem 0;
+    text-align: center;
+    background-image: url("images/bg-boost-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .extera-add h3 {
+    margin-bottom: .8rem;
+    font-size: 26px;
+  }
+
+  .footer-links, .sections {
+    text-align: center;
+    align-items: center;
+  }
+
+  .right-links {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* Animation */
