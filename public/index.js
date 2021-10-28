@@ -15,11 +15,11 @@ document.querySelector(".shorten-btn").addEventListener("click", function(event)
 
 function changeColor(id) {
   document.querySelectorAll(".shorten-link button")[id].innerHTML = "Copied!";
-  document.querySelectorAll(".shorten-link button")[id].style.backgroundColor =  "hsl(257, 27%, 26%)";
+  document.querySelectorAll(".shorten-link button")[id].style.backgroundColor = "hsl(257, 27%, 26%)";
 
   setTimeout(function() {
     document.querySelectorAll(".shorten-link button")[id].innerHTML = "Copy";
-    document.querySelectorAll(".shorten-link button")[id].style.backgroundColor =  "hsl(180, 66%, 49%)";
+    document.querySelectorAll(".shorten-link button")[id].style.backgroundColor = "hsl(180, 66%, 49%)";
   }, 2000);
 }
 
@@ -60,6 +60,7 @@ function buttonInactive() {
   open = 0;
 }
 
+
 document.querySelector(".hamburger").addEventListener("click", function() {
   if (status === "hidden") {
     buttonActive();
@@ -81,3 +82,14 @@ function buttonAppear() {
     }
   }
 }
+
+// Resizing svg picture based on window size
+function svgSizeArrange() {
+  let windowWidth = window.innerWidth;
+  if (windowWidth < 1200) {
+    let mySVG = document.querySelector(".main-section svg");
+    mySVG.setAttribute("viewBox", "0 0 450 530");
+  }
+}
+
+svgSizeArrange();

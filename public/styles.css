@@ -194,7 +194,7 @@ button:hover, .footer-links p:hover, .media-icon:hover {
 .inner-content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .input-area {
@@ -652,7 +652,10 @@ button:hover, .footer-links p:hover, .media-icon:hover {
     width: 12rem;
   }
 
-  .work-picture {}
+  .main-section svg {
+    height: 382px;
+    width: 100%;
+  }
 
   .shorten-section {
     background-image: url("images/bg-shorten-mobile.svg");
@@ -664,6 +667,7 @@ button:hover, .footer-links p:hover, .media-icon:hover {
 
   .inner-content {
     flex-direction: column;
+    align-items: center;
   }
 
   .error-msg {
@@ -679,13 +683,14 @@ button:hover, .footer-links p:hover, .media-icon:hover {
   }
 
   .shorten-section input {
-    margin: 1rem .2rem 0;
+    margin: .5rem .2rem 0;
     padding-left: .3rem;
     width: 97.5%;
   }
 
   .shorten-section button {
     height: 2.8rem;
+    margin-bottom: .5rem;
   }
 
   ::placeholder {
@@ -781,9 +786,9 @@ button:hover, .footer-links p:hover, .media-icon:hover {
     font-size: 26px;
   }
 
-   .footer-links {
-     padding: 3rem 1.5rem 1.5rem;
-   }
+  .footer-links {
+    padding: 3rem 1.5rem 1.5rem;
+  }
 
   .footer-links, .sections {
     text-align: center;
@@ -794,8 +799,7 @@ button:hover, .footer-links p:hover, .media-icon:hover {
     margin-bottom: 2rem;
   }
 
-
-  .sections{
+  .sections {
     margin: 1rem auto 1rem;
   }
 
@@ -820,7 +824,6 @@ button:hover, .footer-links p:hover, .media-icon:hover {
   .media-icon {
     margin: .7rem;
   }
-
 }
 
 /* Animation */
