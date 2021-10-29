@@ -2,12 +2,8 @@ document.querySelector(".shorten-btn").addEventListener("click", function(event)
   let url = document.querySelector(".shorten-input");
 
   if (url.validity.typeMismatch || url.validity.valueMissing) {
-    // let paddTB = document.querySelector(".shorten-input").style.paddingTop;
-    // let paddLR = document.querySelector(".shorten-input").style.paddingLeft;
-    // paddTopB = paddTB - .2;
     document.querySelector(".error-msg").innerHTML = "Please add a link";
     document.querySelector(".shorten-input").style.border = "3px solid hsl(0, 87%, 67%)";
-    // document.querySelector(".shorten-input").style.padding = paddTB + "" + paddLR;
     event.preventDefault(); // Prevents browser default error message
   }
 

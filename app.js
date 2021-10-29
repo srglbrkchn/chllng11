@@ -22,7 +22,9 @@ app.get("/", function(req, res) {
 });
 
 app.post("/", function(req, res) {
-  reqUrl = req.body.longLink;
+  const reqUrl = req.body.longLink;
+  const shortReqUrl = reqUrl.slice(0,31)+"...";
+
   url = "https://api.shrtco.de/v2/shorten?url=" + reqUrl;
   https.get(url, function(response) {
 
@@ -36,7 +38,7 @@ app.post("/", function(req, res) {
         const shortenLink = shortLinkData.result.full_short_link;
 
         const requestedLink = {
-          longUrl: reqUrl,
+          longUrl: shortReqUrl,
           shortUrl: shortenLink,
           id: ""
         }
