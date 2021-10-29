@@ -1,8 +1,10 @@
+
 body {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   margin: 0;
   animation: fadeIn .8s ease-in;
+  min-width: 375px;
 }
 
 button {
@@ -152,6 +154,7 @@ button:hover, .footer-links p:hover, .media-icon:hover {
   border-radius: .8rem;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 .shorten-links {
@@ -195,6 +198,7 @@ button:hover, .footer-links p:hover, .media-icon:hover {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  box-sizing: border-box;
 }
 
 .input-area {
@@ -212,17 +216,21 @@ button:hover, .footer-links p:hover, .media-icon:hover {
 }
 
 .shorten-section input {
-  width: 92%;
+  width: 95%;
   padding: 1.22rem 1.5rem;
   border-radius: .6rem;
   border: none;
   font-size: 18px;
   margin: 0 .2rem;
+  height: 3.8rem;
+  box-sizing: border-box;
 }
 
 .shorten-section button {
   border-radius: .6rem;
   height: 3.8rem;
+  width: 12rem;
+  box-sizing: border-box;
 }
 
 .extera-info .head-section {
@@ -451,6 +459,10 @@ button:hover, .footer-links p:hover, .media-icon:hover {
     justify-content: space-between;
   }
 
+  .input-area {
+    width: 80%;
+  }
+
   .shorten-section button {
     padding: 1rem;
     height: 3rem;
@@ -459,8 +471,9 @@ button:hover, .footer-links p:hover, .media-icon:hover {
   }
 
   .shorten-section input {
+    height: 3rem;
+    width: 95%;
     padding: 1rem .5rem;
-    width: 75%;
   }
 
   .shorten-links {
@@ -679,13 +692,14 @@ button:hover, .footer-links p:hover, .media-icon:hover {
     font-size: 18px;
     border-radius: .4rem;
     padding: .8rem 0;
+    box-sizing: border-box;
     width: 94%;
   }
 
   .shorten-section input {
     margin: .5rem .2rem 0;
     padding-left: .3rem;
-    width: 97.5%;
+    width: 98.5%;
   }
 
   .shorten-section button {
