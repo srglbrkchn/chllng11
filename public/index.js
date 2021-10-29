@@ -4,6 +4,8 @@ document.querySelector(".shorten-btn").addEventListener("click", function(event)
   if (url.validity.typeMismatch || url.validity.valueMissing) {
     document.querySelector(".error-msg").innerHTML = "Please add a link";
     document.querySelector(".shorten-input").style.border = "3px solid hsl(0, 87%, 67%)";
+    // Change color of input placeholder when error occurs
+    document.querySelector(".shorten-input").classList.add("red-inside");
     event.preventDefault(); // Prevents browser default error message
   }
 

@@ -215,6 +215,11 @@ button:hover, .footer-links p:hover, .media-icon:hover {
   font-size: 15px;
 }
 
+/* Class for changing color of placeholder in occurance of error, add it to the input */
+.red-inside::placeholder {
+    color: hsl(0, 87%, 67%);
+ }
+
 .shorten-section input {
   width: 95%;
   padding: 1.22rem 1.5rem;
