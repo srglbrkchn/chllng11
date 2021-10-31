@@ -6,6 +6,7 @@ const https = require('https');
 
 const app = express();
 
+let requestedLinks = [];
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({
@@ -14,7 +15,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.get("/", function(req, res) {
-  const requestedLinks = [];
+  requestedLinks = [];
   res.render("index.ejs", {
     errMsg: "",
     requestedLinks: []
@@ -23,7 +24,7 @@ app.get("/", function(req, res) {
 
 app.post("/", function(req, res) {
   const reqUrl = req.body.longLink;
-  const shortReqUrl = reqUrl.slice(0,31)+"...";
+  const shortReqUrl = reqUrl.slice(0, 31) + "...";
 
   url = "https://api.shrtco.de/v2/shorten?url=" + reqUrl;
   https.get(url, function(response) {
@@ -65,14 +66,14 @@ app.post("/", function(req, res) {
 
 
         res.render("index.ejs", {
-          errMsg:"",
+          errMsg: "",
           requestedLinks: requestedLinks
         });
 
       });
     } else {
       res.render("index.ejs", {
-        errMsg:"Invalid link!",
+        errMsg: "Invalid link!",
         requestedLinks: requestedLinks
       });
     }
