@@ -6,7 +6,6 @@ const https = require('https');
 
 const app = express();
 
-const requestedLinks = [];
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({
@@ -15,6 +14,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.get("/", function(req, res) {
+  const requestedLinks = [];
   res.render("index.ejs", {
     errMsg: "",
     requestedLinks: []
@@ -63,7 +63,6 @@ app.post("/", function(req, res) {
           }
         }
 
-        console.log(requestedLinks);
 
         res.render("index.ejs", {
           errMsg:"",
