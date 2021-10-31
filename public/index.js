@@ -58,7 +58,6 @@ function buttonInactive() {
   open = 0;
 }
 
-
 document.querySelector(".hamburger").addEventListener("click", function() {
   if (status === "hidden") {
     buttonActive();
@@ -67,7 +66,7 @@ document.querySelector(".hamburger").addEventListener("click", function() {
   }
 });
 
-// Checks screen size, if on Tablet or desktop mode, makes content  of hamburger menue visible at all times.
+// Checks screen size, if on Tablet or desktop mode, makes content inside of hamburger menue visible at all times.
 function buttonAppear() {
   let windowWidth = window.innerWidth;
   if (windowWidth > 850) {
