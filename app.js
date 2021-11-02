@@ -51,12 +51,14 @@ app.post("/", function(req, res) {
     global.postIP = macObj.en0.ipv4;
     global.postMac = macObj.en0.mac;
 
+    if (global.postIP != global.enterIP || global.postMac != global.enterMac) {
+      requestedLinks = [];
+      global.enterIP = global.postIP;
+      global.enterMac = global.postMac;
+    }
+
+
   });
-
-  if (global.postIP != global.enterIP || global.postMac != global.enterMac) {
-    requestedLinks = [];
-  }
-
 
   const reqUrl = req.body.longLink;
   const shortReqUrl = reqUrl.slice(0, 31) + "...";

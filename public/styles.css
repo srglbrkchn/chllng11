@@ -85,7 +85,6 @@ button:hover, .footer-links p:hover, .media-icon:hover {
   color: #34313D;
 }
 
-
 .head-part2 button {
   font-size: 15px;
   padding: .7rem 1.5rem;
@@ -338,7 +337,6 @@ button:hover, .footer-links p:hover, .media-icon:hover {
 }
 
 /* Footer links */
-
 .footer-links, .right-links, .inner-content, .shorten-link, .head-part1, .head-part2 {
   display: flex;
   justify-content: space-between;
