@@ -64,7 +64,6 @@ app.post("/", function(req, res) {
   url = "https://api.shrtco.de/v2/shorten?url=" + reqUrl;
   https.get(url, function(response) {
 
-    console.log(response.statusCode);
     const responseCode = response.statusCode;
 
     if (responseCode === 201) {
@@ -98,7 +97,6 @@ app.post("/", function(req, res) {
             count = 0;
           }
         }
-
 
         res.render("index.ejs", {
           errMsg: "",
