@@ -25,40 +25,39 @@ app.use(bodyParser.json());
 
 app.get("/", function(req, res) {
 
-  macaddress.all(function(err, all) {
-    const macStr = JSON.stringify(all, null, 2);
-    const macObj = JSON.parse(macStr);
-
-    global.enterIP = macObj.en0.ipv4;
-    global.enterMac = macObj.en0.mac;
+  // macaddress.all(function(err, all) {
+  //   const macStr = JSON.stringify(all, null, 2);
+  //   const macObj = JSON.parse(macStr);
+  //
+  //   global.enterIP = macObj.en0.ipv4;
+  //   global.enterMac = macObj.en0.mac;
 
     requestedLinks = [];
     res.render("index.ejs", {
       errMsg: "",
       requestedLinks: []
     });
-  });
+  // });
 
 });
 
 
 app.post("/", function(req, res) {
 
-  macaddress.all(function(err, all) {
-    const macStr = JSON.stringify(all, null, 2);
-    const macObj = JSON.parse(macStr);
-
-    global.postIP = macObj.en0.ipv4;
-    global.postMac = macObj.en0.mac;
-
-    if (global.postIP != global.enterIP || global.postMac != global.enterMac) {
-      requestedLinks = [];
-      global.enterIP = global.postIP;
-      global.enterMac = global.postMac;
-    }
-
-
-  });
+  // macaddress.all(function(err, all) {
+  //   const macStr = JSON.stringify(all, null, 2);
+  //   const macObj = JSON.parse(macStr);
+  //
+  //   global.postIP = macObj.en0.ipv4;
+  //   global.postMac = macObj.en0.mac;
+  //
+  //   if (global.postIP != global.enterIP || global.postMac != global.enterMac) {
+  //     requestedLinks = [];
+  //     global.enterIP = global.postIP;
+  //     global.enterMac = global.postMac;
+  //   }
+  //
+  // });
 
   const reqUrl = req.body.longLink;
   const shortReqUrl = reqUrl.slice(0, 31) + "...";
