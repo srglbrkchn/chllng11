@@ -29,8 +29,8 @@ app.get("/", function(req, res) {
     const macStr = JSON.stringify(all, null, 2);
     const macObj = JSON.parse(macStr);
 
-    global.enterIP = macObj.en0.ipv4;
-    global.enterMac = macObj.en0.mac;
+    enterIP = macObj.en0.ipv4;
+    enterMac = macObj.en0.mac;
 
     requestedLinks = [];
     res.render("index.ejs", {
@@ -48,13 +48,13 @@ app.post("/", function(req, res) {
     const macStr = JSON.stringify(all, null, 2);
     const macObj = JSON.parse(macStr);
 
-    global.postIP = macObj.en0.ipv4;
-    global.postMac = macObj.en0.mac;
+    postIP = macObj.en0.ipv4;
+    postMac = macObj.en0.mac;
 
-    if (global.postIP != global.enterIP || global.postMac != global.enterMac) {
+    if (postIP != enterIP || postMac != enterMac) {
       requestedLinks = [];
-      global.enterIP = global.postIP;
-      global.enterMac = global.postMac;
+      enterIP = postIP;
+      enterMac = postMac;
     }
 
 
